@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Add</title>
+  <meta name="description" content="这是一个form页面">
+  <meta name="keywords" content="form">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="__admin__/assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="__admin__/assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="__admin__/assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="__admin__/assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+{include file="Common/ba-header" /}
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  {include file="Common/left" /}
+  <!-- sidebar end -->
+
+<!-- content start -->
+<div class="admin-content">
+  <div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+      <div class="am-fl am-cf">
+        <strong class="am-text-primary am-text-lg">添加</strong> /
+        <small>add</small>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="am-tabs am-margin" data-am-tabs>
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab1">添加歌曲</a></li>
+        <li><a href="#tab2">添加歌手</a></li>
+        <li><a href="#tab3">添加专辑</a></li>
+      </ul>
+
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+          <form class="am-form" action="" method="post">
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">歌曲风格</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Stype">
+                  <option value="摇滚">摇滚</option>
+                  <option value="小清新">小清新</option>
+                  <option value="抒情">抒情</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">专辑</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Salbum">
+                  <option value="0">未选择</option>
+                  {volist name="albumRes" id="album"}
+                  <option value="{$album.Aname}">{$album.Aname}</option>
+                  {/volist}
+                </select>
+              </div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">语种</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Slanguage">
+                  <option value="中文">中文</option>
+                  <option value="日韩">日韩</option>
+                  <option value="英语">英语</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+           
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">歌手</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Ssinger">
+                  <option value="0">未选择</option>
+                  {volist name="singerRes" id="singer"}
+                  <option value="{$singer.Sname}">{$singer.Sname}</option>
+                  {/volist}
+                </select>
+              </div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                曲名
+              </div>
+              <div class="am-u-sm-8 am-u-md-4">
+                <input type="text" class="am-input-sm" name="Ssong">
+              </div>
+              <div class="am-hide-sm-only am-u-md-6">*必填</div>
+            </div>
+          <div class="am-margin">
+            <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+          </div>
+          </form>
+        </div>
+        <div class="am-tab-panel am-fade" id="tab2">
+          <form class="am-form" action="" method="post">
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">性别</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Ssex">
+                  <option value="男">男</option>
+                  <option value="女">女</option>
+                  <option value="未知">未知</option>
+                </select>
+              </div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">地区</div>
+              <div class="am-u-sm-8 am-u-md-10">
+                <select data-am-selected="{btnSize: 'sm'}" name="Sarea">
+                  <option value="中国大陆">中国大陆</option>
+                  <option value="中国台湾">中国台湾</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                歌手名
+              </div>
+              <div class="am-u-sm-8 am-u-md-4">
+                <input type="text" class="am-input-sm" name="Sname">
+              </div>
+              <div class="am-hide-sm-only am-u-md-6">*必填</div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                所属公司
+              </div>
+              <div class="am-u-sm-8 am-u-md-4">
+                <input type="text" class="am-input-sm" name="Sbelongs">
+              </div>
+              <div class="am-hide-sm-only am-u-md-6">*选填</div>
+            </div>
+          <div class="am-margin">
+            <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+          </div>
+          </form>
+        </div>
+        <div class="am-tab-panel am-fade" id="tab3">
+          <form class="am-form" action="" method="post">
+            
+              <div class="am-g am-margin-top">
+                <div class="am-u-sm-4 am-u-md-2 am-text-right">歌手</div>
+                <div class="am-u-sm-8 am-u-md-10">
+                  <select data-am-selected="{btnSize: 'sm'}" name="Aartist">
+                    <option value="0">未选择</option>
+                    {volist name="singerRes" id="singer"}
+                    <option value="{$singer.Sname}">{$singer.Sname}</option>
+                    {/volist}
+                  </select>
+                </div>
+              </div>
+              <div class="am-g am-margin-top">
+                <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                专辑名
+                </div>
+                <div class="am-u-sm-8 am-u-md-4">
+                  <input type="text" class="am-input-sm" name="Aname">
+                </div>
+                <div class="am-hide-sm-only am-u-md-6">*必填</div>
+              </div>
+            <div class="am-g am-margin-top">
+                <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                  发布日期
+                </div>
+                <div class="am-u-sm-8 am-u-md-10">
+                    <div class="am-form-group am-form-icon">
+                      <i class="am-icon-calendar"></i>
+                      <input type="date" class="am-form-field am-input-sm" placeholder="日期" name="Atime">
+                    </div>
+                </div>
+              </div>
+            <div class="am-margin">
+              <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+            </div>
+          </form>
+        </div>
+
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+  </footer>
+</div>
+<!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__admin__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__admin__/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__admin__/assets/js/amazeui.min.js"></script>
+<script src="__admin__/assets/js/app.js"></script>
+</body>
+</html>
